@@ -1,9 +1,13 @@
+
+
 from flask import Flask
+from app.auth import bp as auth_bp
 
 app = Flask(__name__)
 
 
-@app.route('/')
-@app.route('/index')
-def index():
-    return "Hello, World!"
+app.register_blueprint(auth_bp)
+
+
+
+from app.auth import views
