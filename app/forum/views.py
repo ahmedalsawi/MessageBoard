@@ -4,14 +4,15 @@ from flask import render_template
 
 
 @app.route("/", methods=["GET"])
-def index():
+def home():
     return render_template("home.jinja")
 
 
-@app.route("/forum", methods=["GET"])
-def forum():
-    return render_template("home.jinja")
+@app.route("/threads", methods=["GET"])
+def threads():
+    return render_template("forum/threads.jinja")
 
-@app.route("/forum/:id", methods=["GET"])
-def thread():
-    return render_template("home.jinja")
+
+@app.route("/threads/<string:id>", methods=["GET"])
+def thread(id):
+    return render_template("forum/thread.jinja")
