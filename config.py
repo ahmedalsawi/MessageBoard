@@ -24,5 +24,5 @@ class DevConfig(Config):
     SECRET_KEY = "secret"
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         "DATABASE_URL"
-    ) or "sqlite:///" + os.path.join(BASE_DIR, "app.db")
+    ) or "sqlite:///" + os.path.join(BASE_DIR, "app.sqlite")
     SQLALCHEMY_TRACK_MODIFICATIONS = False

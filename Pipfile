@@ -13,6 +13,7 @@ flask-wtf = "*"
 flask-debugtoolbar = "*"
 flask-mail = "*"
 flask-sqlalchemy = "*"
+flask-migrate = "*"
 
 [requires]
 python_version = "3.6"
