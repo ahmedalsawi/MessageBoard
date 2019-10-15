@@ -1,13 +1,26 @@
 from app import app
 
-from flask import render_template
+from flask import render_template, request
+
+from .forms import LoginForm, RegisterForm
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    return render_template("auth/login.jinja")
+    form = LoginForm(request.form)
+    if form.validate_on_submit():
+
+        # TODO
+        return redirect(url_for("index"))
+    return render_template("auth/login.jinja", form=form)
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    return render_template("auth/register.jinja")
+    form = RegisterForm(request.form)
+    if form.validate_on_submit():
+        print(form)
+
+        # TODO
+        return redirect(url_for("index"))
+    return render_template("auth/register.jinja", form=form)
