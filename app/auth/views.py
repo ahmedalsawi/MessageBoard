@@ -9,9 +9,9 @@ from .forms import LoginForm, RegisterForm
 def login():
     form = LoginForm(request.form)
     if form.validate_on_submit():
-
+        print(form)
         # TODO
-        return redirect(url_for("index"))
+        return redirect('/success')
     return render_template("auth/login.jinja", form=form)
 
 
