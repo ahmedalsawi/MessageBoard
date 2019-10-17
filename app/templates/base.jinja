@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {% if title %}
-    <title>MessageBoard - {{ title }}</title>
-    {% else %}
-    <title>MessageBoard</title>
-    {% endif %}
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
-      rel="stylesheet"
-    />
+  {% if title %}
+  <title>MessageBoard - {{ title }}</title>
+  {% else %}
+  <title>MessageBoard</title>
+  {% endif %}
 
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-  </head>
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
 
-  <body>
-    <header>{% include '_navbar.jinja' %}</header>
-    {% block body %}{% endblock %}
-    <footer>{% include '_footer.jinja' %}</footer>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
 
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js"/>
-    <script
+<body>
+  {% include '_navbar.jinja' %}
+  {% block body %}{% endblock %}
+  {% include '_footer.jinja' %}
+
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js" />
+  <script
       src="{{ url_for('static', filename='js/main.js') }}"
       charset="utf-8"
     />

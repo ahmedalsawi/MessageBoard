@@ -1,11 +1,33 @@
 {% extends 'base.jinja' %} {% block body %}
+<div class="container">
+  <div class="page-title">Threads</div>
 
-<h1>Threads</h1>
+  <div class="content">
+    <div class="panel">
 
-<div>
-  {% for thread in threads %}
-  <h2>{{ thread.title }}</h2>
-  {% endfor %}
+    </div>
+
+    <div class="thread-list">
+      {% for thread in threads %}
+      <div class="thread-list-item">
+
+        <div class="count-posts">
+          <span>4</span>
+          <div>Posts</div>
+        </div>
+
+
+        <a href="" class="thread-title">fffffffffffffffffffffffffffffffffffffffffddddddddddddddddddddddffffffff</a>
+
+        <div class="thread-date">
+          <div class="created-date"><span>Created: </span>/01/01 10:00 am</div>
+          <div class="updated-date"><span>Updated: </span>3 minugtes ago</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+
 </div>
-
 {% endblock %}

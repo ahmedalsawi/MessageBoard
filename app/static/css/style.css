@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* Navbar stuff*/
+body {
+  /* navbar size */
+  padding-top: 50px;
+}
+
+.navbar {
+  background-color: black;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: white;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.navbar-item {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+/* content */
+
+.container {
+  display: block;
+  /* depends on size of navbar*/
+  margin-top: auto;
+}
+
+/* Thread list */
+
+.thread-list {}
+
+.thread-list-item {
+  border-bottom: 1px solid #eff0f1;
+  padding: 0.5rem;
+  display: flex;
+
+}
+
+.count-posts {
+  color: green;
+  border-radius: 3px;
+  border: 1px solid;
+  width: 44px;
+  height: auto;
+  display: inline-block;
+  text-align: center;
+}
+
+.thread-title {
+  padding: 0 10px;
+  color: black;
+  font-weight: bold;
+  overflow-wrap: break-word;
+}
+
+.thread-date {
+  margin-left: auto
+}
