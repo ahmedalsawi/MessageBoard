@@ -6,6 +6,7 @@
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 ul {
@@ -50,11 +51,7 @@ body {
 
 /* content */
 
-.container {
-  display: block;
-  /* depends on size of navbar*/
-  margin-top: auto;
-}
+.container {}
 
 /* Thread list */
 
@@ -64,26 +61,40 @@ body {
   border-bottom: 1px solid #eff0f1;
   padding: 0.5rem;
   display: flex;
-
 }
 
 .count-posts {
   color: green;
   border-radius: 3px;
   border: 1px solid;
-  width: 44px;
+  /* TODO define width and height */
+  min-width: 45px;
   height: auto;
+  padding: 5px;
   display: inline-block;
   text-align: center;
 }
 
-.thread-title {
+.thread-summary {
   padding: 0 10px;
-  color: black;
+}
+
+
+
+.thread-tags-list {}
+
+.thread-tag {
+  padding: 5px;
+  background-color: lightblue;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.thread-title {
   font-weight: bold;
-  overflow-wrap: break-word;
 }
 
 .thread-date {
-  margin-left: auto
+  margin-left: auto;
+  font-size: 0.8rem;
 }
