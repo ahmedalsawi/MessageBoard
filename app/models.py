@@ -1,3 +1,6 @@
+from app import db
+from datetime import datetime
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
@@ -5,3 +8,15 @@ class User(db.Model):
     password_hash = db.Column(db.String(128))
     active = db.Column(db.Boolean)
 
+class Thread(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+ 
+
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    # body = db.Column(db.Text())
+    timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    thread_id = db.Column(db.Integer, db.ForeignKey('thread.id'))
+    
