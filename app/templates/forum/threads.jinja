@@ -1,4 +1,11 @@
 {% extends 'base.jinja' %} {% block body %}
 
-<div>Forum</div>
+<h1>Threads</h1>
+
+<div>
+  {% for thread in threads %}
+  <h2>{{ thread.title }}</h2>
+  {% endfor %}
+</div>
+
 {% endblock %}
