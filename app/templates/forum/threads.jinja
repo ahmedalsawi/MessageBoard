@@ -1,39 +1,35 @@
 {% extends 'base.jinja' %} {% block body %}
-<div class="container">
 
-  <div class="content">
-    <div class="panel">
+<div class="threads-page">
 
-    </div>
+  <div class="thread-list">
+    {% for thread in threads %}
+    <div class="thread-list-item">
 
-    <div class="thread-list">
-      {% for thread in threads %}
-      <div class="thread-list-item">
+      <div class="count-posts">
+        <span>4</span>
+        <div>Posts</div>
+      </div>
 
-        <div class="count-posts">
-          <span>4</span>
-          <div>Posts</div>
-        </div>
+      <div class="thread-summary">
+        <a href="/threads/dd"
+          class="thread-title">fffffffffffffffffffffffffffffffffffffffffddddddddddddddddddddddffffffff</a>
 
-        <div class="thread-summary">
-          <a href="" class="thread-title">fffffffffffffffffffffffffffffffffffffffffddddddddddddddddddddddffffffff</a>
-
-          <div class="thread-tags-list">
-            <ul>
-              <li class="thread-tag">fffd</li>
-            </ul>
-          </div>
-        </div>
-
-
-        <div class="thread-date">
-          <div class="created-date"><span>Created: </span>/01/01 10:00 am</div>
-          <div class="updated-date"><span>Updated: </span>3 minugtes ago</div>
+        <div class="thread-tags-list">
+          <ul>
+            <li class="thread-tag">fffd</li>
+            <li class="thread-tag">fffd</li>
+          </ul>
         </div>
       </div>
-      {% endfor %}
-    </div>
 
+
+      <div class="thread-date">
+        <div class="created-date"><span>Created: </span>/01/01 10:00 am</div>
+        <div class="updated-date"><span>Updated: </span>3 minugtes ago</div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
 
 </div>

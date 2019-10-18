@@ -13,18 +13,22 @@ ul {
   list-style: none;
 }
 
-/* utils */
-
-.d-flex {
-  display: flex;
+.container {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Navbar stuff*/
+
 body {
-  /* navbar size */
+  /* TODO navbar size */
   padding-top: 50px;
 }
 
+/* Navbar stuff*/
 .navbar {
   background-color: black;
   color: #fff;
@@ -36,6 +40,7 @@ body {
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+  z-index: 100;
 }
 
 .navbar a {
@@ -54,9 +59,24 @@ body {
 }
 
 
-/* content */
+/* widgets */
+.thread-tag {
+  padding: 2px 5px;
+  background-color: lightblue;
+  display: inline-block;
+  border-radius: 3px;
+}
 
-.container {}
+.count-posts {
+  color: green;
+  border-radius: 3px;
+  /* TODO define width and height */
+  min-width: 45px;
+  height: auto;
+  padding: 5px;
+  display: inline-block;
+  text-align: center;
+}
 
 /* Thread list */
 
@@ -68,30 +88,11 @@ body {
   display: flex;
 }
 
-.count-posts {
-  color: green;
-  border-radius: 3px;
-  border: 1px solid;
-  /* TODO define width and height */
-  min-width: 45px;
-  height: auto;
-  padding: 5px;
-  display: inline-block;
-  text-align: center;
-}
-
 .thread-summary {
   padding: 0 10px;
 }
 
 .thread-tags-list {}
-
-.thread-tag {
-  padding: 5px;
-  background-color: lightblue;
-  display: inline-block;
-  border-radius: 3px;
-}
 
 .thread-title {
   font-weight: bold;
@@ -103,9 +104,13 @@ body {
 }
 
 /* Thread page */
+
 .thread-page {}
 
-.thread-header {}
+.thread-header {
+  border-bottom: 1px solid;
+  margin-bottom: 1rem;
+}
 
 .thread-header-headline {
   font-size: 2rem;
@@ -115,6 +120,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 0.5rem;
 }
 
 .thread-body {}
@@ -122,17 +128,19 @@ body {
 .post-list {}
 
 .post-list-item {
-  border: 1px solid;
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid;
 }
 
 .post-header {
-  border: 1px solid;
-  padding: 5px;
+  padding: 1rem;
 }
 
 .post-text {
-  border: 1px solid;
   flex-grow: 1;
+  word-wrap: break-word;
+  padding-left: 1rem;
+  border-left: 1px solid;
 }
