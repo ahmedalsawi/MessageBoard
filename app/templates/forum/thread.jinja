@@ -1,4 +1,29 @@
 {% extends 'base.jinja' %} {% block body %}
+<div class="thread-page">
 
-<div>thread</div>
+  <div class="thread-header">
+    <div class="thread-header-headline">How to do something</div>
+    <div class="thread-header-details">
+      <div class="thread-header-tags">dfdfd</div>
+      <div class="thread-header-created">gggggggggg</div>
+      <div class="thread-header-updated">hhhhhhhhhh</div>
+    </div>
+  </div>
+
+  <div class="thread-body">
+    <div class="post-list">
+      {% for t in thread %}
+      <div class="post-list-item">
+        <div class="post-header">
+          <div class="post-user">User1</div>
+          <div class="post-timestamp">2019/10/12</div>
+        </div>
+        <div class="post-text">Post body dfdfdfdfdfdsddddddddddddddddddd ddddddddddddddddddddddfdfdddddddddd
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
 {% endblock %}

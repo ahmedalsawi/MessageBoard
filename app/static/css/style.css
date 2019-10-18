@@ -13,6 +13,11 @@ ul {
   list-style: none;
 }
 
+/* utils */
+
+.d-flex {
+  display: flex;
+}
 
 /* Navbar stuff*/
 body {
@@ -79,8 +84,6 @@ body {
   padding: 0 10px;
 }
 
-
-
 .thread-tags-list {}
 
 .thread-tag {
@@ -97,4 +100,39 @@ body {
 .thread-date {
   margin-left: auto;
   font-size: 0.8rem;
+}
+
+/* Thread page */
+.thread-page {}
+
+.thread-header {}
+
+.thread-header-headline {
+  font-size: 2rem;
+}
+
+.thread-header-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.thread-body {}
+
+.post-list {}
+
+.post-list-item {
+  border: 1px solid;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.post-header {
+  border: 1px solid;
+  padding: 5px;
+}
+
+.post-text {
+  border: 1px solid;
+  flex-grow: 1;
 }

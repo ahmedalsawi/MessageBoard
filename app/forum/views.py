@@ -30,11 +30,11 @@ def home():
     return render_template("forum/home.jinja")
 
 
-@app.route("/threads", methods=["GET"])
+@app.route("/threads", methods=["GET","POST"])
 def threads_view():
     return render_template("forum/threads.jinja", threads=threads)
 
 
-@app.route("/threads/<string:id>", methods=["GET"])
+@app.route("/threads/<string:id>", methods=["GET","POST"])
 def thread_view(id):
-    return render_template("forum/thread.jinja")
+    return render_template("forum/thread.jinja", thread=[1,2])
