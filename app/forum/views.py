@@ -1,40 +1,25 @@
-from app import app
-
-from flask import render_template
+from flask import render_template, Blueprint
 
 threads = [
-    {
-        'id': 1,
-        'user': 'user1',
-        'title': 'title1'
-    },
-    {
-        'id': 2,
-        'user': 'user2',
-        'title': 'title2'
-    }
+    {"id": 1, "user": "user1", "title": "title1"},
+    {"id": 2, "user": "user2", "title": "title2"},
 ]
 
-posts = [
-    {
-        'id': 2,
-        'thread': 1,
-        'user': 'user1',
-        'content': 'conent1'
-    }
-]
+posts = [{"id": 2, "thread": 1, "user": "user1", "content": "conent1"}]
+
+bp = Blueprint("forum", __name__)
 
 
-@app.route("/", methods=["GET"])
+@bp.route("/", methods=["GET"])
 def home():
     return render_template("forum/home.jinja")
 
 
-@app.route("/threads", methods=["GET","POST"])
+@bp.route("/threads", methods=["GET", "POST"])
 def threads_view():
     return render_template("forum/threads.jinja", threads=threads)
 
 
-@app.route("/threads/<string:id>", methods=["GET","POST"])
+@bp.route("/threads/<string:id>", methods=["GET", "POST"])
 def thread_view(id):
-    return render_template("forum/thread.jinja", thread=[1,2])
+    return render_template("forum/thread.jinja", thread=[1, 2])

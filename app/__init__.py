@@ -3,18 +3,25 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-app = Flask(__name__)
+db = SQLAlchemy()
+migrate = Migrate()
 
-app.config.from_object("config.DevConfig")
+from app.config import Config, DevConfig
 
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
 
-from app.auth import bp as auth_bp
-from app.forum import bp as forum_bp
+def create_app(config_class=DevConfig):
+    app = Flask(__name__)
 
-app.register_blueprint(auth_bp)
-app.register_blueprint(forum_bp)
+    app.config.from_object(config_class)
 
-from app.auth import views
-from app.forum import views
+    db.init_app(app)
+    migrate.init_app(app, db)
+
+    from app.auth.views import bp as auth_bp
+    from app.forum.views import bp as forum_bp
+
+    app.register_blueprint(auth_bp)
+    app.register_blueprint(forum_bp)
+
+    return app
+

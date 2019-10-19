@@ -1,12 +1,12 @@
-from app import app
-
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, Blueprint
 
 from .forms import LoginForm, RegisterForm
 from app.models import User
 
+bp = Blueprint("auth", __name__)
 
-@app.route("/login", methods=["GET", "POST"])
+
+@bp.route("/login", methods=["GET", "POST"])
 def login():
     form = LoginForm(request.form)
     if form.validate_on_submit():
@@ -17,7 +17,7 @@ def login():
     return render_template("auth/login.jinja", form=form)
 
 
-@app.route("/register", methods=["GET", "POST"])
+@bp.route("/register", methods=["GET", "POST"])
 def register():
     form = RegisterForm(request.form)
     if form.validate_on_submit():
